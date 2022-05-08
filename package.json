@@ -1,6 +1,7 @@
 {
   "name": "restro",
   "version": "0.1.0",
+  "homepage": "http://sister.archanavegrestaurant.com",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -16,7 +17,8 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.0.0-rc.1"
   },
   "scripts": {
     "start": "react-scripts start",

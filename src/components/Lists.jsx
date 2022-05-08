@@ -10,35 +10,87 @@ import {
   Heading,
   List,
   ListItem,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Stack,
   Text,
-  UnorderedList
+  UnorderedList,
+  useDisclosure
 } from '@chakra-ui/react'
 import React from 'react'
 import { BsDash } from 'react-icons/bs'
 
+import useStore from '../store'
+
 function Info() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { cartItems, addItem, removeItem } = useStore()
   return (
-    <ListItem
-      fontSize={20}
-      mt={2}
-      mb={2}
-      style={{
-        listStyle: 'none',
-        padding: '10'
-      }}>
-      <Stack direction="row" justifyContent="space-around" alignItems="center">
-        <Text>Fry Chicken</Text>
-        <Text>8.00 KYD - 10.00 USD</Text>
-        <Button ml={40} mr={5}>
-          <BsDash />
-        </Button>
-        <Text>1</Text>
-        <Button ml={5}>
-          <AddIcon />
-        </Button>
-      </Stack>
-    </ListItem>
+    <>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Fry Chicken</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Stack direction="row" justifyContent="space-between" alignItems="center" my={5}>
+              <Stack direction="row">
+                <Text>Full</Text>
+                <Text>$10</Text>
+              </Stack>
+              <Stack direction="row" alignItems="center">
+                <Button onClick={removeItem}>
+                  <BsDash />
+                </Button>
+                <Text>{cartItems}</Text>
+                <Button onClick={addItem}>
+                  <AddIcon />
+                </Button>
+              </Stack>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between" alignItems="center" my={5}>
+              <Stack direction="row">
+                <Text>Half</Text>
+                <Text>$8</Text>
+              </Stack>
+              <Stack direction="row" alignItems="center">
+                <Button onClick={removeItem}>
+                  <BsDash />
+                </Button>
+                <Text>{cartItems}</Text>
+                <Button onClick={addItem}>
+                  <AddIcon />
+                </Button>
+              </Stack>
+            </Stack>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Add to cart
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      <ListItem
+        fontSize={20}
+        mt={2}
+        mb={2}
+        style={{
+          listStyle: 'none',
+          padding: '10'
+        }}>
+        <Stack direction="row" justifyContent="space-around" alignItems="center">
+          <Text>Fry Chicken</Text>
+          <Text>8.00 KYD - 10.00 USD</Text>
+          <Button onClick={onOpen}>ADD +</Button>
+        </Stack>
+      </ListItem>
+    </>
   )
 }
 

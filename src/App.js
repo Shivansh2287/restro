@@ -12,7 +12,6 @@ import Footer from './components/Footer'
 function HomePage() {
   return (
     <>
-      <NavbarX />
       <LogoFlex />
       <Lists />
       <Orders />
@@ -26,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <ChakraProvider>
+        <NavbarX />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/admin" element={<AdminPanel />} />
