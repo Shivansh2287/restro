@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -15,13 +15,22 @@ import {
   Tfoot,
   Th,
   Thead,
-  Tr
-} from '@chakra-ui/react'
-import React from 'react'
+  Tr,
+} from "@chakra-ui/react";
+import React from "react";
 
 export default function AdminPanel() {
   return (
-    <Box height="100vh" bg="gray.50" m={50} p={100}>
+    <Box
+      height="100vh"
+      bg="gray.50"
+      width={{ base: "100%", md: "50%", sm: "20%" }}
+      style={{
+        margin: "auto",
+      }}
+      p={5}
+      mt={5}
+    >
       <Heading fontSize={50} mb={20}>
         Admin Pannel
       </Heading>
@@ -41,7 +50,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -56,7 +70,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -71,7 +90,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -86,7 +110,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -101,7 +130,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -116,7 +150,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -131,7 +170,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -146,7 +190,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -161,7 +210,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -176,7 +230,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -191,7 +250,12 @@ export default function AdminPanel() {
               <Td>064</Td>
               <Td>14 KYD</Td>
               <Menu>
-                <MenuButton as={Button} my={2} rightIcon={<ChevronDownIcon />}>
+                <MenuButton
+                  as={Button}
+                  my={2}
+                  mx={5}
+                  rightIcon={<ChevronDownIcon />}
+                >
                   Actions
                 </MenuButton>
                 <MenuList>
@@ -205,5 +269,5 @@ export default function AdminPanel() {
         </Table>
       </TableContainer>
     </Box>
-  )
+  );
 }

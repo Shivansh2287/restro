@@ -1,4 +1,4 @@
-import { AddIcon } from '@chakra-ui/icons'
+import { AddIcon } from "@chakra-ui/icons";
 import {
   Accordion,
   AccordionButton,
@@ -20,16 +20,16 @@ import {
   Stack,
   Text,
   UnorderedList,
-  useDisclosure
-} from '@chakra-ui/react'
-import React from 'react'
-import { BsDash } from 'react-icons/bs'
+  useDisclosure,
+} from "@chakra-ui/react";
+import React from "react";
+import { BsDash } from "react-icons/bs";
 
-import useStore from '../store'
+import useStore from "../store";
 
 function Info() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const { cartItems, addItem, removeItem } = useStore()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { cartItems, addItem, removeItem } = useStore();
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -38,10 +38,15 @@ function Info() {
           <ModalHeader>Fry Chicken</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Stack direction="row" justifyContent="space-between" alignItems="center" my={5}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              my={5}
+            >
               <Stack direction="row">
-                <Text>Full</Text>
-                <Text>$10</Text>
+                <Text fontSize={{ xs: 10, md: 25 }}>Full</Text>
+                <Text fontSize={{ xs: 20, md: 25 }}>$10</Text>
               </Stack>
               <Stack direction="row" alignItems="center">
                 <Button onClick={removeItem}>
@@ -53,7 +58,12 @@ function Info() {
                 </Button>
               </Stack>
             </Stack>
-            <Stack direction="row" justifyContent="space-between" alignItems="center" my={5}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              my={5}
+            >
               <Stack direction="row">
                 <Text>Half</Text>
                 <Text>$8</Text>
@@ -81,23 +91,34 @@ function Info() {
         mt={2}
         mb={2}
         style={{
-          listStyle: 'none',
-          padding: '10'
-        }}>
-        <Stack direction="row" justifyContent="space-around" alignItems="center">
+          listStyle: "none",
+          padding: "10",
+        }}
+      >
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center"
+        >
           <Text>Fry Chicken</Text>
           <Text>8.00 KYD - 10.00 USD</Text>
           <Button onClick={onOpen}>ADD +</Button>
         </Stack>
       </ListItem>
     </>
-  )
+  );
 }
 
 export default function Lists() {
   return (
     <>
-      <Box ml="30%" mr="30%">
+      <Box
+        width={{ base: "100%", md: "50%", sm: "20%" }}
+        p={5}
+        style={{
+          margin: "auto",
+        }}
+      >
         <Heading mb={10} align="center">
           Menu
         </Heading>
@@ -105,7 +126,12 @@ export default function Lists() {
           <AccordionItem bg="lemonchiffon" mb={5}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontWeight="bold" fontSize={25}>
+                <Box
+                  flex="1"
+                  textAlign="left"
+                  fontWeight="bold"
+                  fontSize={{ sm: 20, md: 25 }}
+                >
                   Today's Special
                 </Box>
               </AccordionButton>
@@ -122,7 +148,12 @@ export default function Lists() {
           <AccordionItem bg="lemonchiffon" mb={5}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontWeight="bold" fontSize={25}>
+                <Box
+                  flex="1"
+                  textAlign="left"
+                  fontWeight="bold"
+                  fontSize={{ sm: 20, md: 25 }}
+                >
                   Soup Of the Day
                 </Box>
               </AccordionButton>
@@ -139,7 +170,12 @@ export default function Lists() {
           <AccordionItem bg="lemonchiffon" mb={5}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontWeight="bold" fontSize={25}>
+                <Box
+                  flex="1"
+                  textAlign="left"
+                  fontWeight="bold"
+                  fontSize={{ sm: 20, md: 25 }}
+                >
                   Burgers & Wraps
                 </Box>
               </AccordionButton>
@@ -156,7 +192,12 @@ export default function Lists() {
           <AccordionItem bg="lemonchiffon" mb={5}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontWeight="bold" fontSize={25}>
+                <Box
+                  flex="1"
+                  textAlign="left"
+                  fontWeight="bold"
+                  fontSize={{ sm: 20, md: 25 }}
+                >
                   Jerk Special
                 </Box>
               </AccordionButton>
@@ -173,7 +214,12 @@ export default function Lists() {
           <AccordionItem bg="lemonchiffon" mb={5}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left" fontWeight="bold" fontSize={25}>
+                <Box
+                  flex="1"
+                  textAlign="left"
+                  fontWeight="bold"
+                  fontSize={{ sm: 20, md: 25 }}
+                >
                   Combo Special
                 </Box>
               </AccordionButton>
@@ -190,5 +236,5 @@ export default function Lists() {
         </Accordion>
       </Box>
     </>
-  )
+  );
 }
