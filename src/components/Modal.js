@@ -24,7 +24,7 @@ export default function PopUP() {
       <ModalOverlay backdropFilter="blur(5px)" />
       <ModalContent background="rgba(255, 255, 255, 0.58)" mt="15%">
         <ModalHeader>Fry Chicken</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton onClick={() => setModal(false)} />
         <ModalBody>
           <Stack
             direction="row"
