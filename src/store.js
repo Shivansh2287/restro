@@ -8,6 +8,9 @@ const useStore = create((set, get) => ({
   cartItem: [],
   addCartItem: (item) =>
     set((state) => ({ cartItem: [...state.cartItem, item] })),
+
+  modal: false,
+  setModal: (value) => set((state) => ({ modal: value })),
 }));
 
 export default useStore;

@@ -52,7 +52,7 @@ export default function Orders() {
         <Info />
       </Box>
       <Stack
-        ml="55%"
+        ml={["40%", "40%", "50%", "40%"]}
         mb={50}
         alignItems="center"
         justifyContent="center"

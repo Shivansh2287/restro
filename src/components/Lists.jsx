@@ -2,7 +2,6 @@ import { AddIcon } from "@chakra-ui/icons";
 import {
   Accordion,
   AccordionButton,
-  AccordionIcon,
   AccordionItem,
   AccordionPanel,
   Box,
@@ -10,28 +9,20 @@ import {
   Heading,
   List,
   ListItem,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Stack,
   Text,
   UnorderedList,
-  useDisclosure,
 } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import { BsDash } from "react-icons/bs";
 import obj from "../data";
 
-// import Context from "../context/Context";
 import PopUP from "./Modal";
 
-function Info({ name, price }) {
-  console.log({ obj });
+import useStore from "../store";
 
+function Info({ name, price }) {
+  const { setModal } = useStore();
   return (
     <>
       <ListItem
@@ -50,7 +41,13 @@ function Info({ name, price }) {
         >
           <Text>{name}</Text>
           <Text>{price}</Text>
-          <Button>ADD +</Button>
+          <Button
+            onClick={() => {
+              setModal(true);
+            }}
+          >
+            ADD +
+          </Button>
         </Stack>
       </ListItem>
     </>
@@ -58,9 +55,11 @@ function Info({ name, price }) {
 }
 
 export default function Lists() {
+  const { modal } = useStore();
+  console.log(modal);
   return (
     <>
-      <PopUP />
+      {modal && <PopUP />}
       <Box
         width={{ base: "100%", md: "50%", sm: "20%" }}
         p={5}

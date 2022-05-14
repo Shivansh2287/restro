@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 export default function LogoFlex() {
   return (
     <Box
-      width="40%"
+      width={["90%", 0, "40%"]}
       p={10}
       style={{
         margin: "auto",
