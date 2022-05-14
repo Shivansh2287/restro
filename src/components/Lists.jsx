@@ -29,10 +29,8 @@ import obj from "../data";
 // import Context from "../context/Context";
 import PopUP from "./Modal";
 
-function Info() {
-  useEffect(() => {
-    console.log(obj);
-  }, []);
+function Info({ name, price }) {
+  console.log({ obj });
 
   return (
     <>
@@ -50,8 +48,8 @@ function Info() {
           justifyContent="space-around"
           alignItems="center"
         >
-          <Text>Fry Chicken</Text>
-          <Text>8.00 CI - 10.00 CI</Text>
+          <Text>{name}</Text>
+          <Text>{price}</Text>
           <Button>ADD +</Button>
         </Stack>
       </ListItem>
@@ -74,116 +72,31 @@ export default function Lists() {
           Menu
         </Heading>
         <Accordion defaultIndex={[0]} allowMultiple>
-          <AccordionItem bg="lemonchiffon" mb={5}>
-            <h2>
-              <AccordionButton>
-                <Box
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize={{ sm: 20, md: 25 }}
-                >
-                  Today's Special
-                </Box>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <UnorderedList ml={10}>
-                <Info />
-                <hr />
-                <Info />
-                <hr />
-              </UnorderedList>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem bg="lemonchiffon" mb={5}>
-            <h2>
-              <AccordionButton>
-                <Box
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize={{ sm: 20, md: 25 }}
-                >
-                  Soup Of the Day
-                </Box>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <UnorderedList ml={10}>
-                <Info />
-                <hr />
-                <Info />
-                <hr />
-              </UnorderedList>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem bg="lemonchiffon" mb={5}>
-            <h2>
-              <AccordionButton>
-                <Box
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize={{ sm: 20, md: 25 }}
-                >
-                  Burgers & Wraps
-                </Box>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <UnorderedList ml={10}>
-                <Info />
-                <hr />
-                <Info />
-                <hr />
-              </UnorderedList>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem bg="lemonchiffon" mb={5}>
-            <h2>
-              <AccordionButton>
-                <Box
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize={{ sm: 20, md: 25 }}
-                >
-                  Jerk Special
-                </Box>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <UnorderedList ml={10}>
-                <Info />
-                <hr />
-                <Info />
-                <hr />
-              </UnorderedList>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem bg="lemonchiffon" mb={5}>
-            <h2>
-              <AccordionButton>
-                <Box
-                  flex="1"
-                  textAlign="left"
-                  fontWeight="bold"
-                  fontSize={{ sm: 20, md: 25 }}
-                >
-                  Combo Special
-                </Box>
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              <UnorderedList ml={10}>
-                <Info />
-                <hr />
-                <Info />
-                <hr />
-              </UnorderedList>
-            </AccordionPanel>
-          </AccordionItem>
+          {obj.map((item, index) => {
+            return (
+              <AccordionItem bg="lemonchiffon" mb={5}>
+                <h2>
+                  <AccordionButton>
+                    <Box
+                      flex="1"
+                      textAlign="left"
+                      fontWeight="bold"
+                      fontSize={{ sm: 20, md: 25 }}
+                    >
+                      Today's Special
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <UnorderedList ml={10}>
+                    {item.map((item, index) => {
+                      return <Info name={item.name} price={item.price} />;
+                    })}
+                  </UnorderedList>
+                </AccordionPanel>
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </Box>
     </>
