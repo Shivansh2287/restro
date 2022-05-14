@@ -17,10 +17,10 @@ import { BsDash } from "react-icons/bs";
 import useStore from "../store";
 
 export default function PopUP() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { cartItems, addItem, removeItem } = useStore();
+  const { cartItems, addItem, removeItem, setModal } = useStore();
+  const { onClose, onOpen, isOpen, onToggle } = useDisclosure();
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={true}>
       <ModalOverlay backdropFilter="blur(5px)" />
       <ModalContent background="rgba(255, 255, 255, 0.58)" mt="15%">
         <ModalHeader>Fry Chicken</ModalHeader>
@@ -68,7 +68,7 @@ export default function PopUP() {
           </Stack>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button colorScheme="blue" mr={3}>
             Add to cart
           </Button>
         </ModalFooter>
