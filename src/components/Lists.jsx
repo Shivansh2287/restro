@@ -22,70 +22,20 @@ import {
   UnorderedList,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { BsDash } from "react-icons/bs";
+import obj from "../data";
 
-import useStore from "../store";
+// import Context from "../context/Context";
+import PopUP from "./Modal";
 
 function Info() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { cartItems, addItem, removeItem } = useStore();
+  useEffect(() => {
+    console.log(obj);
+  }, []);
+
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Fry Chicken</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              my={5}
-            >
-              <Stack direction="row">
-                <Text fontSize={{ xs: 10, md: 25 }}>Full</Text>
-                <Text fontSize={{ xs: 20, md: 25 }}>$10</Text>
-              </Stack>
-              <Stack direction="row" alignItems="center">
-                <Button onClick={removeItem}>
-                  <BsDash />
-                </Button>
-                <Text>{cartItems}</Text>
-                <Button onClick={addItem}>
-                  <AddIcon />
-                </Button>
-              </Stack>
-            </Stack>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              my={5}
-            >
-              <Stack direction="row">
-                <Text>Half</Text>
-                <Text>$8</Text>
-              </Stack>
-              <Stack direction="row" alignItems="center">
-                <Button onClick={removeItem}>
-                  <BsDash />
-                </Button>
-                <Text>{cartItems}</Text>
-                <Button onClick={addItem}>
-                  <AddIcon />
-                </Button>
-              </Stack>
-            </Stack>
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Add to cart
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
       <ListItem
         fontSize={20}
         mt={2}
@@ -101,8 +51,8 @@ function Info() {
           alignItems="center"
         >
           <Text>Fry Chicken</Text>
-          <Text>8.00 KYD - 10.00 USD</Text>
-          <Button onClick={onOpen}>ADD +</Button>
+          <Text>8.00 CI - 10.00 CI</Text>
+          <Button>ADD +</Button>
         </Stack>
       </ListItem>
     </>
@@ -112,6 +62,7 @@ function Info() {
 export default function Lists() {
   return (
     <>
+      <PopUP />
       <Box
         width={{ base: "100%", md: "50%", sm: "20%" }}
         p={5}

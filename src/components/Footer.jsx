@@ -8,7 +8,7 @@ export default function Footer() {
       direction="row"
       justifyContent="space-around"
       alignItems="center"
-      width={{ base: "100%", md: "30%", sm: "20%" }}
+      width={{ lg: "100%", md: "30%", sm: "20%" }}
       p={10}
       bg="lemonchiffon"
       mt={20}

@@ -44,11 +44,13 @@ const NavbarX = (props) => {
         spacing={7}
         mt={{ base: 4, md: 0 }}
       >
-        <Text>Menu</Text>
-        <Text>About</Text>
-        <Text>Contact</Text>
-        <Text>Order Online</Text>
-        <Text>Catering</Text>
+        <Stack direction="row" spacing={8} alignItems="center">
+          <Text>Menu</Text>
+          <Text>About</Text>
+          <Text>Contact</Text>
+          <Text>Order Online</Text>
+          <Text>Catering</Text>
+        </Stack>
         <Stack
           direction="row"
           spacing={4}

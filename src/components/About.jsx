@@ -6,7 +6,7 @@ import img2 from "../assets/up.png";
 export default function About() {
   return (
     <Box
-      width={{ base: "100%", md: "30%", sm: "20%" }}
+      width={{ lg: "40%" }}
       p={10}
       style={{
         margin: "auto",

@@ -4,11 +4,11 @@ import { Box } from "@chakra-ui/react";
 export default function LogoFlex() {
   return (
     <Box
-      width={{ base: "100%", md: "30%", sm: "20%" }}
+      width="40%"
       p={10}
       style={{
         margin: "auto",
-        marginTop: "100px",
+        marginTop: "50px",
         marginBottom: "100px",
       }}
     >
